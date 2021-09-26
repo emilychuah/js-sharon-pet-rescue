@@ -5,7 +5,7 @@ const createPet = function (name, species) {
   const pet = {
     name: name,
     species: species,
-    isTired: 5, // Scale from 1 (refreshed) to 10 (exhausted)
+    isTired: 5, 
     sleep: function () {
       console.log(`${this.name} needs a nap. Zzz...`);
       this.isTired = 1;
@@ -30,28 +30,20 @@ const baxter = createPet("Baxter", "hamster");
 const cleo = createPet("Cleo", "rat");
 const francine = createPet("Francine", "turtle");
 
-//console.log(sora, clover, baxter, cleo, francine);
-
-// clover.sleep(); //You can get access to the pet object's properties since they're returned to the createPet function.
-// baxter.play();
-
-// console.log(clover, baxter);
-
 clover.isTired = 8;
 francine.isTired = 9;
 
 const allPets = [sora, clover, baxter, cleo, francine];
-//console.log(allPets);
 
 const showPets = function (petArray) {
-  pets.innerHTML = ""; //This will clear your list whenever showPets is run, so that you can update it with fresh info.
+  pets.innerHTML = ""; 
 
   for (let pet of petArray) {
-    let status = "ready to play!"; //Use 'let' here since I'll reassign the value.
+    let status = "ready to play!"; 
     if (pet.isTired >= 7) {
       status = "sleeping.";
     }
-    const li = document.createElement("li"); //There's no need to use 'let' here since I won't reassign the variable.
+    const li = document.createElement("li"); 
     li.innerHTML = `<span class ="pet-name">${pet.name}</span> the ${pet.species} is ${status}`;
     pets.append(li);
   }
